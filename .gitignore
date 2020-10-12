@@ -1,0 +1,6 @@
+*~
+*.log
+*.swp
+config.py
+emoji_roles.json
+__pycache__/
