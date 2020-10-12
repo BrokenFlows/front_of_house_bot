@@ -47,9 +47,6 @@ async def on_raw_reaction_add(payload):
             member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
             if member is not None:
                 await member.add_roles(role) # let's fucking go
-                print('Role set')
-            else:
-                print('Member not found') # guess we didn't find them
 
 # same as above but for revoking membership
 @client.event
@@ -68,7 +65,6 @@ async def on_raw_reaction_remove(payload):
             member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
             if member is not None:
                 await member.remove_roles(role)
-            else:
 
 # start that bot
 client.run(config.token)
