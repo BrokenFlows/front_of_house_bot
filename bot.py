@@ -30,5 +30,10 @@ async def echo(ctx, *, source : str):
     """Echoes the phrase back to the sender"""
     await ctx.send(source)
 
+@bot.command()
+async def tts(ctx, *, source : str):
+    """Echoes the phrase back using TTS"""
+    await ctx.send(source, tts=True)
+
 bot.run(config.token)
 
