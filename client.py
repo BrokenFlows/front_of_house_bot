@@ -5,10 +5,13 @@ import json
 import discord
 from discord.ext import commands
 
-with open('emoji_roles.json', 'r') as erfile:
+def get_emoji_rules_json():
+    with open('emoji_roles.json', 'r') as erfile:
         data=erfile.read()
-
-erobj = json.loads(data)
+    
+    erobj = json.loads(data)
+    
+    return erobj
 
 # need members intent to get any member info, such as list
 intents = discord.Intents.default()
@@ -28,6 +31,7 @@ async def on_ready():
 @client.event
 async def on_raw_reaction_add(payload):
     message_id = payload.message_id
+    erobj = get_emoji_rules_json()
     if (str(message_id) in erobj): # check that it's only on a specific message
         erdct = erobj[str(message_id)]
 
@@ -51,6 +55,7 @@ async def on_raw_reaction_add(payload):
 @client.event
 async def on_raw_reaction_remove(payload):
     message_id = payload.message_id
+    erobj = get_emoji_rules_json()
     if (str(message_id) in erobj):
         erdct = erobj[str(message_id)]
 
