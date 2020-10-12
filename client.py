@@ -25,7 +25,7 @@ client = discord.Client(intents=intents)
 # when bot online
 @client.event
 async def on_ready():
-    print("Bot logged in.")
+    print("Client logged in")
 
 # when there is a reaction
 @client.event
@@ -68,9 +68,7 @@ async def on_raw_reaction_remove(payload):
             member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
             if member is not None:
                 await member.remove_roles(role)
-                print('Role unset')
             else:
-                print('Member not found')
 
 # start that bot
 client.run(config.token)
