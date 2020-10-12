@@ -11,8 +11,6 @@ bot = commands.Bot(command_prefix=config.prefix, description=description)
 async def on_ready():
     print('Logged in as', end=" ")
     print(bot.user.name)
-    print(bot.user.id)
-    print('------')
 
 @bot.command()
 async def hello(ctx):
