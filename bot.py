@@ -41,7 +41,5 @@ async def tts(ctx, *, source : str):
     # tts flag means the client while read it aloud
     await ctx.send(source, tts=True)
 
-
-
 bot.run(config.token)
 
