@@ -13,7 +13,7 @@ async def on_ready():
     print('Logged in as', end=" ")
     print(bot.user.name)
 
-# check if it can hear you
+# check if it can hear you, in a kinda cute way
 @bot.command()
 async def hello(ctx):
     """Says world, get it?"""
