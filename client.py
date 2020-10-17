@@ -6,7 +6,7 @@ import discord
 from discord.ext import commands
 
 def get_emoji_rules_json() -> dict:
-	with open('emoji_roles.json', 'r') as erfile:
+	with open('/home/pi/front_of_house_bot/emoji_roles.json', 'r') as erfile:
 		data=erfile.read()
 
 	erobj = json.loads(data)
