@@ -4,7 +4,7 @@ import config
 import discord
 from discord.ext import commands
 
-description = """Runs the show around here"""
+description = """The face of the bot working behind the scenes"""
 bot = commands.Bot(command_prefix=config.prefix, description=description)
 
 # declare when the bot is running
