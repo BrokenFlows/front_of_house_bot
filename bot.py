@@ -16,7 +16,7 @@ async def on_ready():
 # check if it can hear you
 @bot.command()
 async def hello(ctx):
-    """Says world"""
+    """Says world, get it?"""
     await ctx.send("world")
 
 # what's the ping to the bot
