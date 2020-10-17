@@ -19,7 +19,7 @@ async def hello(ctx):
     """Says world, get it?"""
     await ctx.send("world")
 
-# what's the ping to the bot
+# sends the ping of the bot to the asking channel
 @bot.command()
 async def ping(ctx):
     """Gets the bot's latency in ms"""
