@@ -44,7 +44,7 @@ async def tts(ctx, *, source : str):
 # echo back the command with tts
 @bot.command()
 async def yo(ctx):
-    """Echoes the phrase back using TTS"""
+    """uses tts to "say" yo aloud"""
     # uses tts to "say" yo aloud
     await ctx.send("yo", tts=True)
 
