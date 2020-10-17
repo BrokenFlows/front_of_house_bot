@@ -41,5 +41,12 @@ async def tts(ctx, *, source : str):
     # tts flag means the client while read it aloud
     await ctx.send(source, tts=True)
 
+# echo back the command with tts
+@bot.command()
+async def yo(ctx):
+    """Echoes the phrase back using TTS"""
+    # uses tts to "say" yo
+    await ctx.send("yo", tts=True)
+
 bot.run(config.token)
 
