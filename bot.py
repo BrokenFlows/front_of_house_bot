@@ -47,8 +47,8 @@ async def puppet(ctx, *, source : str):
     """Deletes the command message then repeats it"""
     message = ctx.message
     if (message.author.id == config.puppet_master):
-        await ctx.send(source)
         await message.delete()
+        await ctx.send(source)
 
 bot.run(config.token)
 
