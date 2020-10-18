@@ -41,5 +41,14 @@ async def tts(ctx, *, source : str):
     # tts flag means the client while read it aloud
     await ctx.send(source, tts=True)
 
+# echo back a command
+@bot.command()
+async def puppet(ctx, *, source : str):
+    """Deletes the command message then repeats it"""
+    message = ctx.message
+    if (message.author_id == client.puppet_master):
+        await ctx.send(source)
+        await message.delete()
+
 bot.run(config.token)
 
