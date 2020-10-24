@@ -13,13 +13,13 @@ except:
     version = "unknown"
 
 print(version)
-description = f"""The face of the bot working behind the scenes\nVersion {version}"""
+description = f"""The face of the bot working behind the scenes\nVersion {version} {id(version)}"""
 bot = commands.Bot(command_prefix=config.prefix, description=description)
 
 # declare when the bot is running
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user.name} version {version}')
+    print(f'Logged in as {bot.user.name} version {version} {id(version)}')
 
 # check if it can hear you, in a kinda cute way
 @bot.command()
