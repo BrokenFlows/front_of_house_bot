@@ -2,6 +2,7 @@
 
 import config
 import discord
+import re
 from discord.ext import commands
 
 # to add version numbers to the bot as to track of which commit is running
