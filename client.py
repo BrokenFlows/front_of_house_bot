@@ -3,6 +3,7 @@
 import config
 import json
 import discord
+from datetime import datetime
 from discord.ext import commands
 
 def get_emoji_rules_json() -> dict:
@@ -35,7 +36,7 @@ client = discord.Client(intents=intents)
 # when bot online
 @client.event
 async def on_ready():
-	print("Client logged in")
+	print(f'{datetime.now()}: Client logged in')
 
 # when there is a reaction
 @client.event
