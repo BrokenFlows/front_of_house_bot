@@ -50,5 +50,17 @@ async def puppet(ctx, *, source : str):
         await message.delete()
         await ctx.send(source)
 
+# move a command to a different channel
+@bot.command()
+async def move(ctx, other_user : str, other_channel : str):
+    """Deletes the chosen message and moves it to another channel"""
+    print('{0} {1}'.format(ctx, type(ctx)))
+    print('{0} {1}'.format(other_user, type(other_user)))
+    print('{0} {1}'.format(other_channel, type(other_channel)))
+#    message = ctx.message
+#    if (message.author.id == config.puppet_master):
+#        await message.delete()
+#        await ctx.send(source)
+
 bot.run(config.token)
 
