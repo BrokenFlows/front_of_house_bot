@@ -4,7 +4,10 @@ import config
 import discord
 from discord.ext import commands
 
-description = """The face of the bot working behind the scenes"""
+with open('/home/pi/production/front_of_house_bot/.version', 'r') as version_file:
+    version = version_file.read()
+
+description = f"""The face of the bot working behind the scenes\nVersion {version}"""
 bot = commands.Bot(command_prefix=config.prefix, description=description)
 
 # declare when the bot is running
@@ -52,9 +55,8 @@ async def puppet(ctx, *, source : str):
 
 # move a command to a different channel
 @bot.command()
-async def move(ctx, other_user, other_channel):
+async def move(ctx, other_user : str, other_channel : str):
     """Deletes the chosen message and moves it to another channel"""
-    print('we got here')
     print('{0} {1}'.format(type(ctx), ctx))
     print('{0} {1}'.format(type(other_user), other_user))
     print('{0} {1}'.format(type(other_channel), other_channel))
