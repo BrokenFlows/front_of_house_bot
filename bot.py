@@ -52,7 +52,7 @@ async def puppet(ctx, *, source : str):
 
 # move a command to a different channel
 @bot.command()
-async def move(ctx, other_user : str, other_channel : str):
+async def move(ctx, other_user, other_channel):
     """Deletes the chosen message and moves it to another channel"""
     print('we got here')
     print('{0} {1}'.format(type(ctx), ctx))
