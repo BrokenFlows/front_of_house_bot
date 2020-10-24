@@ -4,6 +4,7 @@ import config
 import discord
 from discord.ext import commands
 
+# to add version numbers to the bot as to track of which commit is running
 try:
     with open('/home/pi/production/front_of_house_bot/.version', 'r') as version_file:
         version = version_file.read()
