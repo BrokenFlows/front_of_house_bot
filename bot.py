@@ -17,8 +17,7 @@ bot = commands.Bot(command_prefix=config.prefix, description=description)
 # declare when the bot is running
 @bot.event
 async def on_ready():
-    print('Logged in as', end=" ")
-    print(bot.user.name)
+    print(f'Logged in as {bot.user.name} {version}')
 
 # check if it can hear you, in a kinda cute way
 @bot.command()
@@ -33,7 +32,7 @@ async def ping(ctx):
     # Get the latency of the bot
     latency = int(round(bot.latency, 3) * 1e3)
     # tell the user
-    await ctx.send('{:3d} ms'.format(latency))
+    await ctx.send(f'{latency:3d} ms')
 
 # echo back a command
 @bot.command()
@@ -61,9 +60,9 @@ async def puppet(ctx, *, source : str):
 @bot.command()
 async def move(ctx, other_user : str, other_channel : str):
     """Deletes the chosen message and moves it to another channel"""
-    print('{0} {1}'.format(type(ctx), ctx))
-    print('{0} {1}'.format(type(other_user), other_user))
-    print('{0} {1}'.format(type(other_channel), other_channel))
+    print(f'type(ctx), ctx')
+    print(f'type(other_user), other_user')
+    print(f'type(other_channel), other_channel')
 #    message = ctx.message
 #    if (message.author.id == config.puppet_master):
 #        await message.delete()
