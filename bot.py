@@ -8,7 +8,7 @@ try:
     with open('/home/pi/production/front_of_house_bot/.version', 'r') as version_file:
         version = version_file.read()
 except:
-    version = "Unknown"
+    version = "unknown"
 
 description = f"""The face of the bot working behind the scenes\nVersion {version}"""
 bot = commands.Bot(command_prefix=config.prefix, description=description)
