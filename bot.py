@@ -3,6 +3,7 @@
 import config
 import discord
 import re
+from datetime import datetime
 from discord.ext import commands
 
 # to add version numbers to the bot as to track of which commit is running
@@ -19,7 +20,7 @@ bot = commands.Bot(command_prefix=config.prefix, description=description)
 # declare when the bot is running
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user.name} version {version} {id(version)}')
+    print(f'{datetime.now()}: Logged in as {bot.user.name} version {version} {id(version)}')
 
 # check if it can hear you, in a kinda cute way
 @bot.command()
