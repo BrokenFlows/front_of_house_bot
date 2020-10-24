@@ -54,9 +54,9 @@ async def puppet(ctx, *, source : str):
 @bot.command()
 async def move(ctx, other_user : str, other_channel : str):
     """Deletes the chosen message and moves it to another channel"""
-    print('{0} {1}'.format(ctx, type(ctx)))
-    print('{0} {1}'.format(other_user, type(other_user)))
-    print('{0} {1}'.format(other_channel, type(other_channel)))
+    print('{0} {1}'.format(type(ctx), ctx))
+    print('{0} {1}'.format(type(other_user), other_user))
+    print('{0} {1}'.format(type(other_channel), other_channel))
 #    message = ctx.message
 #    if (message.author.id == config.puppet_master):
 #        await message.delete()
