@@ -13,7 +13,6 @@ try:
 except:
     version = "unknown"
 
-print(version)
 description = f"""The face of the bot working behind the scenes\nVersion {version} {id(version)}"""
 bot = commands.Bot(command_prefix=config.prefix, description=description)
 
