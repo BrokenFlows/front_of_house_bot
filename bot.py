@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix=config.prefix, description=description)
 # declare when the bot is running
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user.name} {version}')
+    print(f'Logged in as {bot.user.name} version {version}')
 
 # check if it can hear you, in a kinda cute way
 @bot.command()
