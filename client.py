@@ -41,6 +41,7 @@ async def on_ready():
 # when there is a reaction
 @client.event
 async def on_raw_reaction_add(payload):
+	print(f'{datetime.now()}: Event on_raw_reaction_add detected')
 	message_id = payload.message_id
 
 	erobj = get_emoji_rules_json()
@@ -62,6 +63,7 @@ async def on_raw_reaction_add(payload):
 # same as above but for revoking membership
 @client.event
 async def on_raw_reaction_remove(payload):
+	print(f'{datetime.now()}: Event on_raw_reaction_remove detected')
 	message_id = payload.message_id
 
 	erobj = get_emoji_rules_json()
