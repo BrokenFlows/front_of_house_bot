@@ -12,7 +12,7 @@ def log_call(func):
 
         result = await func(*args, **kwargs)
         return result
-    wrapped_func.__name__ = func.__name__
+#    wrapped_func.__name__ = func.__name__
     return wrapped_func
 
 # to add version numbers to the bot as to track of which commit is running
@@ -32,14 +32,14 @@ async def on_ready():
 
 # check if it can hear you, in a kinda cute way
 @bot.command()
-@log_call
+#@log_call
 async def hello(ctx):
     """Says world, get it?"""
     await ctx.send("world")
 
 # sends the ping of the bot to the asking channel
 @bot.command()
-@log_call
+#@log_call
 async def ping(ctx):
     """Gets the bot's latency in ms"""
     # Get the latency of the bot
@@ -56,7 +56,7 @@ async def echo(ctx, *, source : str):
 
 # echo back the command with tts
 @bot.command()
-@log_call
+#@log_call
 async def tts(ctx, *, source : str):
     """Echoes the phrase back using TTS"""
     # tts flag means the client while read it aloud
@@ -64,7 +64,7 @@ async def tts(ctx, *, source : str):
 
 # echo back a command
 @bot.command()
-@log_call
+#@log_call
 async def puppet(ctx, *, source : str):
     """Deletes the command message then repeats it"""
     message = ctx.message
@@ -74,7 +74,7 @@ async def puppet(ctx, *, source : str):
 
 # move a command to a different channel
 @bot.command()
-@log_call
+#@log_call
 async def move(ctx, other_user : str, other_channel : str):
     """Deletes the chosen message and moves it to another channel"""
     print(f'{type(ctx)}, {ctx}')
