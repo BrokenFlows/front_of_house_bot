@@ -71,15 +71,14 @@ async def move(ctx, other_user : str, other_channel : str):
     print(f'{type(ctx)}, {ctx}')
     print(f'{type(other_user)}, {other_user}')
     print(f'{type(other_channel)}, {other_channel}')
-    other_user_id = (re.search(r'\d*', other_user).group(0))
-    other_channel_id = (re.search(r'\d*', other_channel).group(0))
+    other_user_id = int(re.search(r'\d+', other_user).group(0))
+    other_channel_id = int(re.search(r'\d+', other_channel).group(0))
     print(f'{type(other_user_id)}, {other_user_id}')
     print(f'{type(other_channel_id)}, {other_channel_id}')
 #    message = ctx.message
 #    if (message.author.id == config.puppet_master):
 #        await message.delete()
 #        await ctx.send(source)
-
 
 bot.run(config.token)
 
