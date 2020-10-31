@@ -6,6 +6,14 @@ import re
 from datetime import datetime
 from discord.ext import commands
 
+def log_call(func):
+    def wrapped_func(*args, **kwargs):
+        print(f'{datetime.now()}: Received command *{func.__qualname__}*')
+
+        result = func(*args, **kwargs)
+        return result
+    return wrapped_func
+
 # to add version numbers to the bot as to track of which commit is running
 try:
     with open('/home/pi/production/front_of_house_bot/.version', 'r') as version_file:
@@ -23,9 +31,10 @@ async def on_ready():
 
 # check if it can hear you, in a kinda cute way
 @bot.command()
+@log_call
 async def hello(ctx):
     """Says world, get it?"""
-    print(f'{datetime.now()}: Received command *hello*')
+    #print(f'{datetime.now()}: Received command *hello*')
     await ctx.send("world")
 
 # sends the ping of the bot to the asking channel
