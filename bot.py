@@ -7,10 +7,10 @@ from datetime import datetime
 from discord.ext import commands
 
 def log_call(func):
-    def wrapped_func(*args, **kwargs):
+    async def wrapped_func(*args, **kwargs):
         print(f'{datetime.now()}: Received command *{func.__qualname__}*')
 
-        result = func(*args, **kwargs)
+        result = await func(*args, **kwargs)
         return result
     return wrapped_func
 
