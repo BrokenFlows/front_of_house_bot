@@ -12,6 +12,7 @@ def log_call(func):
 
         result = await func(*args, **kwargs)
         return result
+    wrapped_func.__qualname__ = func.__qualname__
     return wrapped_func
 
 # to add version numbers to the bot as to track of which commit is running
