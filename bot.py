@@ -6,14 +6,25 @@ import re
 from datetime import datetime
 from discord.ext import commands
 
-def log_call(func):
-    async def wrapped_func(*args, **kwargs):
-        print(f'{datetime.now()}: Received command *{func.__qualname__}* with args {args} {kwargs}')
+def printname(func):
+     async def wrapped_in(args, **kwargs):
+         print("Name: ", func.name)
+         res = await func(args, **kwargs)
+         return res
 
-        result = await func(*args, **kwargs)
-        return result
-#    wrapped_func.__name__ = func.__name__
-    return wrapped_func
+     args = f"{','.join(func.code.co_varnames)}"
+     definition = f"""async def wrapped({args}):
+     res = await wrapped_in({args})
+     return res
+     """
+
+     fakelocals = {}
+     exec(definition, {"wrapped_in": wrapped_in}, fakelocals)
+     wrapped = fakelocals['wrapped']
+
+     wrapped.name = func.name
+
+     return wrapped
 
 # to add version numbers to the bot as to track of which commit is running
 try:
