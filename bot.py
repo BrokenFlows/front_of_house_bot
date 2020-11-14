@@ -12,7 +12,7 @@ def log_call(func):
          res = await func(args, **kwargs)
          return res
 
-     args = f"{','.join(func.code.co_varnames)}"
+     args = f"{','.join(func.__code__.co_varnames)}"
      definition = f"""async def wrapped({args}):
      res = await wrapped_in({args})
      return res
