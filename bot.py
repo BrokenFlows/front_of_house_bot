@@ -59,8 +59,8 @@ async def ping(ctx):
     await ctx.send(f'{latency:3d} ms')
 
 # echo back a command
-@log_call
 @bot.command()
+@log_call
 async def echo(ctx, *, source : str):
     """Echoes the phrase back to the sender"""
     await ctx.send(source)
