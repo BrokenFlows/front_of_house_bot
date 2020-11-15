@@ -13,7 +13,7 @@ def log_call(func):
         res = await func(*args, **kwdef_args)
         return res
 
-    params = signature(func).parameters
+    params = signature(func).parameters.values()
 
     args = [param.name for param in params if param.kind!=param.KEYWORD_ONLY]
     args.extend([f"{param.name}={param.name}" for param in params if param.kind==param.KEYWORD_ONLY])
