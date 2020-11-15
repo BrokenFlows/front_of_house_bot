@@ -8,7 +8,7 @@ from discord.ext import commands
 
 def log_call(func):
      async def wrapped_in(*args, **kwargs):
-         print("Name: ", func.__name__)
+         print("Registered command: ", func.__name__)
          res = await func(*args, **kwargs)
          return res
 
