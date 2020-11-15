@@ -8,18 +8,20 @@ from discord.ext import commands
 from inspect import signature
 
 def log_call(func):
-    async def wrapped_in(*args, **kwargs):
+    async def wrapped_in(*def_args, **kwdef_args):
         print("Registered command: ", func.__name__)
-        res = await func(*args, **kwargs)
+        res = await func(*def_args, **kwdef_args)
         return res
 
     params = signature(func).parameters
     params = [str(p) for p in params.values()]
-    args = ",".join(params)
-    # args = f"{','.join(func.__code__.co_varnames)}"
-    print(args)
-    definition = f"""async def wrapped({args}):
-    res = await wrapped_in({args})
+    def_args = ",".join(params)
+
+    params = [p.name for p in params.values()]
+    call_args = ",".join(params)
+    print(def_args)
+    definition = f"""async def wrapped({def_args}):
+    res = await wrapped_in({call_args})
     return res
     """
     print(definition)
