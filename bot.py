@@ -22,7 +22,7 @@ def log_call(func):
      exec(definition, {"wrapped_in": wrapped_in}, fakelocals)
      wrapped = fakelocals['wrapped']
 
-     wrapped.name = func.name
+     wrapped.__name__ = func.__name__
 
      return wrapped
 
