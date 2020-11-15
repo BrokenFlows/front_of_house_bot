@@ -17,6 +17,7 @@ def log_call(func):
     params = [str(p) for p in params.values()]
     def_args = ",".join(params)
 
+    params = signature(func).parameters
     params = [p.name for p in params.values()]
     call_args = ",".join(params)
     print(def_args)
