@@ -54,9 +54,9 @@ async def hello(ctx):
 async def ping(ctx):
     """Gets the bot's latency in ms"""
     # Get the latency of the bot
-    latency = int(round(bot.latency, 3) * 1e3)
+    ltnc = int(round(bot.latency, 3) * 1e3)
     # tell the user
-    await ctx.send(f'{latency:3d} ms')
+    await ctx.send(f'{ltnc:3d} ms')
 
 # echo back a command
 @bot.command()
