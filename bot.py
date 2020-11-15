@@ -22,6 +22,7 @@ def log_call(func):
     res = await wrapped_in({args})
     return res
     """
+    print(definition)
 
     fakelocals = {}
     exec(definition, {"wrapped_in": wrapped_in}, fakelocals)
